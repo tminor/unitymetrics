@@ -150,7 +150,7 @@ func parsePool(id string, name string, sizeFree uint64, sizeSubscribed uint64, s
 
 	tagsMap["unity"] = unityName
 	tagsMap["pool"] = id
-	tagsMap["poolname"] = name
+	tagsMap["poolname"] = strings.Replace(name, " ", "\\ ", -1)
 
 	fieldsMap["sizefree"] = strconv.FormatUint(sizeFree, 10)
 	fieldsMap["sizesubscribed"] = strconv.FormatUint(sizeSubscribed, 10)
